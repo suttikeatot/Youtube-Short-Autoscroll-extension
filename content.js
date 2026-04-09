@@ -9,12 +9,6 @@
 
   const now = () => Date.now();
 
-  function persistEnabledState() {
-    if (chrome?.storage?.local) {
-      chrome.storage.local.set({ [STORAGE_KEY]: isEnabled });
-    }
-  }
-
   function withinCooldown() {
     return now() - lastAdvanceAt < ADVANCE_COOLDOWN_MS;
   }
@@ -100,6 +94,9 @@
         isEnabled = !isEnabled;
 
         persistEnabledState();
+        if (chrome?.storage?.local) {
+          chrome.storage.local.set({ [STORAGE_KEY]: isEnabled });
+        }
 
         console.info(
           `[YT Shorts Auto Scroll] ${isEnabled ? "enabled" : "disabled"} (Alt+S)`

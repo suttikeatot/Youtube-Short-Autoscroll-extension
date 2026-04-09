@@ -8,6 +8,9 @@
 - ปิด/เปิดการทำงานได้ด้วยคีย์ลัด `Alt + S`
 - บันทึกสถานะเปิด/ปิดไว้ใน Chrome Storage
 - ทำงานกับหน้า `https://www.youtube.com/shorts/*`
+- ทำงานกับหน้า `https://www.youtube.com/shorts/*`
+- ปิด/เปิดการทำงานได้ด้วยคีย์ลัด `Alt + S`
+- บันทึกสถานะเปิด/ปิดไว้ใน Chrome Storage
 
 ## วิธีติดตั้ง (Developer mode)
 1. เปิด Chrome แล้วไปที่ `chrome://extensions`
@@ -17,11 +20,9 @@
 
 ## วิธีใช้งาน
 1. เข้า YouTube Shorts
-2. กด pin extension แล้วคลิกไอคอน extension
-3. ใช้สวิตช์ `Auto Scroll` เพื่อเปิด/ปิด
-4. ระบบจะเลื่อนไปคลิปใหม่ให้อัตโนมัติเมื่อจบคลิป
+2. เปิดคลิปใดก็ได้ในหน้า Shorts
+3. ระบบจะเลื่อนไปคลิปใหม่ให้อัตโนมัติเมื่อจบคลิป
 
 ## Files
-- `manifest.json` - ตั้งค่า extension และ popup
+- `manifest.json` - ตั้งค่า extension
 - `content.js` - logic auto scroll บนหน้า YouTube Shorts
-- `popup.html` / `popup.css` / `popup.js` - หน้าเมนูเปิด/ปิด Auto Scroll
