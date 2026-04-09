@@ -93,6 +93,7 @@
       if (event.altKey && event.key.toLowerCase() === "s") {
         isEnabled = !isEnabled;
 
+        persistEnabledState();
         if (chrome?.storage?.local) {
           chrome.storage.local.set({ [STORAGE_KEY]: isEnabled });
         }
@@ -116,6 +117,24 @@
     });
   }
 
+
+  function watchSettingChanges() {
+    if (!chrome?.storage?.onChanged) {
+      return;
+    }
+
+    chrome.storage.onChanged.addListener((changes, areaName) => {
+      if (areaName !== "local" || !changes[STORAGE_KEY]) {
+        return;
+      }
+
+      const nextValue = changes[STORAGE_KEY].newValue;
+      if (typeof nextValue === "boolean") {
+        isEnabled = nextValue;
+      }
+    });
+  }
+
   function init() {
     if (!location.pathname.startsWith("/shorts/")) {
       return;
@@ -125,6 +144,7 @@
     scanAndAttachVideos();
     watchForNewVideos();
     setupHotkey();
+    watchSettingChanges();
   }
 
   init();

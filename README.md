@@ -4,6 +4,10 @@
 
 ## Features
 - เลื่อนไป Short ถัดไปอัตโนมัติเมื่อวิดีโอจบ
+- เปิด/ปิดฟีเจอร์ได้จาก popup ของ extension
+- ปิด/เปิดการทำงานได้ด้วยคีย์ลัด `Alt + S`
+- บันทึกสถานะเปิด/ปิดไว้ใน Chrome Storage
+- ทำงานกับหน้า `https://www.youtube.com/shorts/*`
 - ทำงานกับหน้า `https://www.youtube.com/shorts/*`
 - ปิด/เปิดการทำงานได้ด้วยคีย์ลัด `Alt + S`
 - บันทึกสถานะเปิด/ปิดไว้ใน Chrome Storage
